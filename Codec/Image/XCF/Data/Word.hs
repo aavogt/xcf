@@ -1,7 +1,7 @@
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 
 module Codec.Image.XCF.Data.Word
-       (UWord (..), Word (..), uWordSize)
+       (UWord (..), Codec.Image.XCF.Data.Word.Word (..), uWordSize)
        where
 
 import Data.Word hiding (Word)

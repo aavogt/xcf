@@ -50,5 +50,4 @@ library
   -- other-modules:       
   
   -- Other library packages from which modules are imported.
-  build-depends:       base ==4.6.*, text ==0.11.*, bytestring ==0.10.*, data-binary-ieee754 ==0.4.*, binary ==0.7.*, attoparsec ==0.10.*, attoparsec-binary ==0.2.*, transformers ==0.3.*
-  
+  build-depends:       base , text , bytestring , data-binary-ieee754 , binary , attoparsec , attoparsec-binary , transformers

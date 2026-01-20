@@ -143,7 +143,7 @@ data GuideOrientation = Horizontal | Vertical deriving (Bounded, Enum, Show)
 data Unit = Inches | Millimeters | Points | Picas deriving (Bounded, Enum, Show)
 
  -- TODO: move to own file under data
-newtype GuideCoordinate = GuideCoordinate Word deriving Show
+newtype GuideCoordinate = GuideCoordinate Codec.Image.XCF.Data.Word.Word deriving Show
 
  -- TODO: move to own file under data
 data Guide = Guide GuideCoordinate GuideOrientation deriving Show

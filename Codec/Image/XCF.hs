@@ -53,16 +53,16 @@ import qualified Codec.Image.XCF.Data.Level as Level
 import qualified Codec.Image.XCF.Data.CompressionIndicator as CompressionIndicator
 import qualified Codec.Image.XCF.Data.Tile as Tile
 
-import Prelude hiding (take)
+import Prelude hiding (Word, take)
 
 newtype Size = Size Int64 deriving (Show, Eq)
 newtype CheckedParser a = CheckedParser (StateT Size Attoparsec.Parser a)
-                        deriving (Monad, Alternative, Applicative, Functor)
+                        deriving (Monad, MonadFail, Alternative, Applicative, Functor)
 
 -- This type-class constitutes our (tiny) API of binary parsers.
 -- It is specified here because we want to re-use some parsers as either
 -- CheckedParser or plain Attoparsec parsers
-class Parsing p where
+class MonadFail p => Parsing p where
   anyWord8 :: p Word8
   word8 :: Word8 -> p Word8
   take :: Int -> p ByteString.ByteString
